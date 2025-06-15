@@ -1,5 +1,11 @@
+import LayoutWrapper from "../components/LayoutWrapper";
+
 const Home = () => {
-  return <div className="bg-background text-foreground">Home</div>;
+  return (
+    <LayoutWrapper>
+      <div className="bg-accent text-accent-foreground">Home</div>
+    </LayoutWrapper>
+  );
 };
 
 export default Home;
