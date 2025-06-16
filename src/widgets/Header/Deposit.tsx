@@ -19,13 +19,13 @@ const Deposit = () => {
     >
       <NxtImg src={DollorIcon} width={24} height={24} alt="$" />
       <Currency
-        className="w-32 rounded-none py-3 pr-4 pl-2.5"
+        className="h-10 w-32 rounded-none py-3 pr-4 pl-2.5"
         placeholder="Enter amount"
         onChange={value => {
           console.log(value);
         }}
       />
-      <Button className="rounded-l-none rounded-r-md border-l border-l-transparent hover:border-l-border">
+      <Button className="h-10 rounded-l-none rounded-r-md border-l border-l-transparent hover:border-l-border">
         DEPOSIT
       </Button>
     </form>
