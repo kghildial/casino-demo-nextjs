@@ -8,8 +8,8 @@ const Icons = () => {
   return (
     <div className="flex gap-x-[5px]">
       {[
-        { name: 'BellIcon', src: BellIcon },
-        { name: 'ProfileIcon', src: ProfileIcon },
+        { name: 'Bell Icon', src: BellIcon },
+        { name: 'Profile Icon', src: ProfileIcon },
       ].map(({ name, src }) => (
         <DynamicIcon
           key={name}

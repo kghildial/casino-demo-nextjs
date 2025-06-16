@@ -1,5 +1,5 @@
-import Static from './Dynamic';
-import Dynamic from './Static';
+import Static from './Static';
+import Dynamic from './Dynamic';
 
 export const StaticIcon = Static;
 export const DynamicIcon = Dynamic;

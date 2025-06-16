@@ -5,7 +5,7 @@ import LayoutWrapper from '../components/LayoutWrapper';
 
 const Home = () => {
   return (
-    <LayoutWrapper>
+    <LayoutWrapper className="mt-20">
       <div className="bg-background text-foreground">Home</div>
       <Button>Click Me</Button>
     </LayoutWrapper>
