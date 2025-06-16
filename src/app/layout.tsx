@@ -3,6 +3,7 @@ import { Poppins } from 'next/font/google';
 import './globals.css';
 
 import { ThemeProvider } from '@/components/ThemeProvider';
+import Header from '@/widgets/Header';
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -25,6 +26,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${poppins.variable} dark antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+          <Header />
           {children}
         </ThemeProvider>
       </body>

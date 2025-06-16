@@ -6,8 +6,8 @@ import LayoutWrapper from '../components/LayoutWrapper';
 const Home = () => {
   return (
     <LayoutWrapper>
-      <div className="bg-accent text-accent-foreground">Home</div>
-      <Button variant="default">Click Me</Button>
+      <div className="bg-background text-foreground">Home</div>
+      <Button>Click Me</Button>
     </LayoutWrapper>
   );
 };
