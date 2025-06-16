@@ -1,3 +1,4 @@
+import type { StaticImageData } from 'next/image';
 import type { EmblaCarouselType } from 'embla-carousel';
 
 export interface IAutoPlayOptions {
@@ -7,7 +8,7 @@ export interface IAutoPlayOptions {
 }
 
 export interface ICarousel {
-  slides: Record<string, unknown>[];
+  slides: StaticImageData[];
   options: Record<string, unknown>;
   hideDots?: boolean;
   hidePrevNext?: boolean;

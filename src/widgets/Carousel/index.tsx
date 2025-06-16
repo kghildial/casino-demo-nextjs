@@ -1,6 +1,7 @@
 'use client';
 
 import { useCallback, type FC as ReactFC } from 'react';
+import Image from 'next/image';
 import Autoplay from 'embla-carousel-autoplay';
 import useEmblaCarousel from 'embla-carousel-react';
 import type { EmblaCarouselType } from 'embla-carousel';
@@ -72,10 +73,10 @@ const Carousel: ReactFC<ICarousel> = ({
   );
 
   return (
-    <section className="m-auto max-w-3xl">
+    <section className="m-auto w-full">
       <div className="overflow-hidden" ref={emblaRef}>
         <div className={cn('flex touch-pan-y touch-pinch-zoom', `-ml-${slideSpacing}`)}>
-          {slides.map((_, index) => {
+          {slides.map((src, index) => {
             return (
               <div
                 key={index}
@@ -85,23 +86,20 @@ const Carousel: ReactFC<ICarousel> = ({
                   slideSize,
                 )}
               >
-                <div
+                {/* <div
                   className={cn(
                     'flex items-center justify-center rounded-sm border border-red-500 text-2xl font-medium select-none',
                     slideHeight,
                   )}
-                >
-                  {index}
-                </div>
+                > */}
+                <Image src={src} width={595} height={300} alt={`Banner_${index + 1}`} />
+                {/* </div> */}
               </div>
             );
           })}
         </div>
       </div>
 
-      <div className="flex justify-center">
-        <div className="flex flex-wrap items-center justify-end gap-2.5"></div>
-      </div>
       <CarouselNav
         emblaApi={emblaApi}
         configureAutoplay={configureAutoplay}
