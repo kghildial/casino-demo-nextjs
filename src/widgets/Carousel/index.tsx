@@ -18,7 +18,6 @@ const Carousel: ReactFC<ICarousel> = ({
   autoplay = false,
   slideSize = 'basis-full',
   slideSpacing = '2.5',
-  slideHeight = 'h-fit',
 }) => {
   const getAutoplayOptions = () => {
     const options = {
