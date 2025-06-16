@@ -15,6 +15,7 @@ export interface ICarousel {
   autoplay?: IAutoPlayOptions | boolean;
   slideSize?: string;
   slideSpacing?: string;
+  slideMarginAdjust?: string;
 }
 
 export type TCarouselHookCb = (emblaApi: EmblaCarouselType) => void;

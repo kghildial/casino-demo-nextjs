@@ -17,7 +17,8 @@ const Carousel: ReactFC<ICarousel> = ({
   hidePrevNext = false,
   autoplay = false,
   slideSize = 'basis-full',
-  slideSpacing = '2.5',
+  slideSpacing = 'pl-2.5',
+  slideMarginAdjust = '-ml-2.5',
 }) => {
   const getAutoplayOptions = () => {
     const options = {
@@ -74,16 +75,12 @@ const Carousel: ReactFC<ICarousel> = ({
   return (
     <section className="m-auto w-full">
       <div className="overflow-hidden" ref={emblaRef}>
-        <div className={cn('flex touch-pan-y touch-pinch-zoom', `-ml-${slideSpacing}`)}>
+        <div className={cn('flex touch-pan-y touch-pinch-zoom', slideMarginAdjust)}>
           {slides.map((src, index) => {
             return (
               <div
                 key={index}
-                className={cn(
-                  'min-w-0 shrink-0 grow-0 transform-gpu',
-                  `pl-${slideSpacing}`,
-                  slideSize,
-                )}
+                className={cn('min-w-0 shrink-0 grow-0 transform-gpu', slideSpacing, slideSize)}
               >
                 {/* <div
                   className={cn(
