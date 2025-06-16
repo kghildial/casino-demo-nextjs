@@ -85,7 +85,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="flex flex-col text-center">
+        <div className="flex flex-col pb-20 text-center md:pb-0">
           <p className="text-sm font-normal text-muted-foreground">
             GAMBLING CAN BE ADDICTIVE. PLAY RESPONSIBLY!
           </p>

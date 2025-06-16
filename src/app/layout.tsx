@@ -5,7 +5,8 @@ import './globals.css';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import Header from '@/widgets/Header';
 import Footer from '@/widgets/Footer';
-import { DesktopMenu } from '@/widgets/Menu';
+import Menu from '@/widgets/Menu';
+import MobileMenu from '@/widgets/Menu/MobileMenu';
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -29,7 +30,8 @@ export default function RootLayout({
       <body className={`${poppins.variable} dark antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           <Header />
-          <DesktopMenu />
+          <Menu />
+          <MobileMenu />
           {children}
           <Footer />
         </ThemeProvider>
