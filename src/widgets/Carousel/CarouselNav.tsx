@@ -3,13 +3,20 @@
 import { type FC as ReactFC } from 'react';
 
 import { cn } from '@/lib/utils';
-import { useCarouselNav, usePrevNextButtons } from '@/hooks/carousel';
 import { Button } from '@/components/ui/button';
+
+import { useCarouselNav, usePrevNextButtons } from '@/hooks/carousel';
+
 import { ICarouselNav } from './Carousel.types';
+
+import ChevronRight from '@/assets/icons/chevron_right.svg';
+import Image from 'next/image';
 
 const CarouselNav: ReactFC<ICarouselNav> = ({
   hideDots = false,
   hidePrevNext = false,
+  dotsClassname,
+  prevNextClassname,
   emblaApi,
   configureAutoplay,
 }) => {
@@ -27,7 +34,7 @@ const CarouselNav: ReactFC<ICarouselNav> = ({
     >
       {/* Dots */}
       {!hideDots && (
-        <ul className="flex gap-2.5">
+        <ul className={cn('flex gap-2.5', dotsClassname)}>
           {scrollSnaps.map((_: number, index: number) => (
             <li
               key={index}
@@ -43,12 +50,20 @@ const CarouselNav: ReactFC<ICarouselNav> = ({
 
       {/* Prev, Next */}
       {!hidePrevNext && (
-        <div className="flex gap-2.5">
-          <Button disabled={prevBtnDisabled} onClick={() => onPrevButtonClick()}>
-            Prev
+        <div className={cn('flex gap-2.5', prevNextClassname)}>
+          <Button
+            disabled={prevBtnDisabled}
+            className="border-2 border-border bg-primary px-1.5"
+            onClick={() => onPrevButtonClick()}
+          >
+            <Image src={ChevronRight} width={18} height={18} alt="Prev" className="rotate-180" />
           </Button>
-          <Button disabled={nextBtnDisabled} onClick={() => onNextButtonClick()}>
-            Next
+          <Button
+            disabled={nextBtnDisabled}
+            className="border-2 border-border bg-primary px-1.5"
+            onClick={() => onNextButtonClick()}
+          >
+            <Image src={ChevronRight} width={18} height={18} alt="Next" />
           </Button>
         </div>
       )}

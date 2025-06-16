@@ -15,7 +15,7 @@ const SearchBar = () => {
   const [activeTag, setActiveTag] = useState('');
 
   return (
-    <div className="flex flex-col">
+    <div className="mb-5 flex flex-col">
       {/* Search Bar */}
       <div className="mb-4 flex rounded-md border border-border bg-primary px-3 py-2">
         <Image src={SearchIcon} width={24} height={24} alt="Search" />

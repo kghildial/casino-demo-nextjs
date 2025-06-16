@@ -19,6 +19,8 @@ const Carousel: ReactFC<ICarousel> = ({
   slideSize = 'basis-full',
   slideSpacing = 'pl-2.5',
   slideMarginAdjust = '-ml-2.5',
+  dotsClassname = '',
+  prevNextClassname = '',
 }) => {
   const getAutoplayOptions = () => {
     const options = {
@@ -52,7 +54,10 @@ const Carousel: ReactFC<ICarousel> = ({
     }
   };
 
-  const [emblaRef, emblaApi] = useEmblaCarousel(options, [Autoplay(getAutoplayOptions())]);
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    options,
+    autoplay ? [Autoplay(getAutoplayOptions())] : [],
+  );
 
   // Callback to run autoplay if option is enabled
   const configureAutoplay = useCallback(
@@ -73,7 +78,7 @@ const Carousel: ReactFC<ICarousel> = ({
   );
 
   return (
-    <section className="m-auto w-full">
+    <section className="relative m-auto w-full">
       <div className="overflow-hidden" ref={emblaRef}>
         <div className={cn('flex touch-pan-y touch-pinch-zoom', slideMarginAdjust)}>
           {slides.map((src, index) => {
@@ -93,6 +98,8 @@ const Carousel: ReactFC<ICarousel> = ({
         emblaApi={emblaApi}
         configureAutoplay={configureAutoplay}
         hideDots={hideDots}
+        dotsClassname={dotsClassname}
+        prevNextClassname={prevNextClassname}
         hidePrevNext={hidePrevNext}
       />
     </section>

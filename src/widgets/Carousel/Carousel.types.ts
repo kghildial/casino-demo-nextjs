@@ -12,6 +12,8 @@ export interface ICarousel {
   options: Record<string, unknown>;
   hideDots?: boolean;
   hidePrevNext?: boolean;
+  dotsClassname?: string;
+  prevNextClassname?: string;
   autoplay?: IAutoPlayOptions | boolean;
   slideSize?: string;
   slideSpacing?: string;
@@ -22,7 +24,9 @@ export type TCarouselHookCb = (emblaApi: EmblaCarouselType) => void;
 
 export interface ICarouselNav {
   hideDots?: boolean;
-  hidePrevNext?: boolean;
+  hidePrevNext: boolean;
+  dotsClassname: string;
+  prevNextClassname?: string;
   emblaApi: EmblaCarouselType | undefined;
   configureAutoplay: TCarouselHookCb;
 }
