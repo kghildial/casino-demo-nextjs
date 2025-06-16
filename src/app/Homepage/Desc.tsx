@@ -8,13 +8,15 @@ const Desc = () => {
   const [toggle, setToggle] = useState(false);
 
   useEffect(() => {
-    const timeoutID = setTimeout(() => {
-      document.querySelector('#desc')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }, 300);
+    if (toggle) {
+      const timeoutID = setTimeout(() => {
+        document.querySelector('#desc')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 300);
 
-    return () => {
-      clearTimeout(timeoutID);
-    };
+      return () => {
+        clearTimeout(timeoutID);
+      };
+    }
   }, [toggle]);
 
   return (
@@ -22,7 +24,7 @@ const Desc = () => {
       id="desc"
       className={cn(
         'relative mb-8 flex max-h-60 flex-col overflow-hidden transition-all',
-        toggle ? 'max-h-[1000px] overflow-visible' : '',
+        toggle ? 'max-h-[50000px] overflow-visible' : '',
       )}
     >
       <p>
