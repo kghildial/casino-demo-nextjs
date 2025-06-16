@@ -4,6 +4,7 @@ import Carousel from '@/widgets/Carousel';
 import HeroGrid from './HeroGrid';
 import SearchNShowcase from './SearchNShowcase';
 import NoCryptoNoProblem from './NoCryptoNoProblem';
+import Desc from './Desc';
 
 // Hero Banners
 import Banner1 from '@/assets/images/banners/banner1.png';
@@ -31,6 +32,8 @@ const Homepage = () => {
       <SearchNShowcase />
 
       <NoCryptoNoProblem />
+
+      <Desc />
     </LayoutWrapper>
   );
 };
