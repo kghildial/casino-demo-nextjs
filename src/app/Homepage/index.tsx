@@ -16,7 +16,7 @@ const Homepage = () => {
       <Carousel
         slides={[Banner1, Banner2, Banner3, Banner4, Banner5]}
         options={{ align: 'start', loop: true }}
-        slideSize="basis-1/2"
+        slideSize="md:basis-1/2 basis-full"
         slideSpacing="pl-2.5"
         slideMarginAdjust="-ml-2.5"
         autoplay

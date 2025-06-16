@@ -82,14 +82,7 @@ const Carousel: ReactFC<ICarousel> = ({
                 key={index}
                 className={cn('min-w-0 shrink-0 grow-0 transform-gpu', slideSpacing, slideSize)}
               >
-                {/* <div
-                  className={cn(
-                    'flex items-center justify-center rounded-sm border border-red-500 text-2xl font-medium select-none',
-                    slideHeight,
-                  )}
-                > */}
                 <Image src={src} width={595} height={300} alt={`Banner_${index + 1}`} />
-                {/* </div> */}
               </div>
             );
           })}
