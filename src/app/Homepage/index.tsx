@@ -1,14 +1,16 @@
 import LayoutWrapper from '@/components/LayoutWrapper';
 import Carousel from '@/widgets/Carousel';
 
+import HeroGrid from './HeroGrid';
+import SearchNShowcase from './SearchNShowcase';
+import NoCryptoNoProblem from './NoCryptoNoProblem';
+
+// Hero Banners
 import Banner1 from '@/assets/images/banners/banner1.png';
 import Banner2 from '@/assets/images/banners/banner2.png';
 import Banner3 from '@/assets/images/banners/banner3.png';
 import Banner4 from '@/assets/images/banners/banner4.png';
 import Banner5 from '@/assets/images/banners/banner5.png';
-
-import HeroGrid from './HeroGrid';
-import Search from './SearchNShowcase';
 
 const Homepage = () => {
   return (
@@ -26,7 +28,9 @@ const Homepage = () => {
 
       <HeroGrid />
 
-      <Search />
+      <SearchNShowcase />
+
+      <NoCryptoNoProblem />
     </LayoutWrapper>
   );
 };
