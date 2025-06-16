@@ -2,7 +2,7 @@
 
 import { type FC as ReactFC } from 'react';
 
-import Image, { StaticImageData } from 'next/image';
+import Image from 'next/image';
 
 import { ITag } from './Tag.types';
 import { cn } from '@/lib/utils';
@@ -16,7 +16,7 @@ const Tag: ReactFC<ITag> = ({ data: { id, name, icon }, onClick, className }) =>
       )}
       onClick={() => onClick({ id, name, icon })}
     >
-      <Image src={icon as StaticImageData} width={24} height={24} alt={id} />
+      <Image src={icon} width={24} height={24} alt={id} />
       <p>{name}</p>
     </div>
   );

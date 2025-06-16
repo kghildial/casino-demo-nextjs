@@ -1,6 +1,6 @@
 import SearchBar from './SearchBar';
 
-const Search = () => {
+const SearchNShowcase = () => {
   return (
     <div className="mt-5 flex flex-col">
       <SearchBar />
@@ -8,4 +8,4 @@ const Search = () => {
   );
 };
 
-export default Search;
+export default SearchNShowcase;
