@@ -24,7 +24,7 @@ const Desktop = () => {
           label=""
           href={''}
           collapsed={collapsed}
-          className="fixed top-0"
+          className="bg-menu-foreground fixed top-0"
           iconClassName="mr-0"
           onClick={() => {
             setCollapsed(false);
@@ -36,7 +36,7 @@ const Desktop = () => {
           label=""
           href={''}
           collapsed={collapsed}
-          className="fixed top-0"
+          className="fixed top-0 bg-menu-background"
           iconClassName="mr-0"
           onClick={() => {
             setCollapsed(true);

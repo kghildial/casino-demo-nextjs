@@ -8,7 +8,7 @@ import MenuIcon from '@/assets/icons/menu/mobile/menu.svg';
 
 const MobileMenu = () => {
   return (
-    <div className="fixed bottom-0 z-50 flex w-screen justify-between bg-menu-background px-10 py-2.5">
+    <div className="fixed bottom-0 z-50 flex w-screen justify-between bg-menu-background px-10 py-2.5 md:hidden">
       <Image src={HomeMobIcon} width={30} height={38} alt="home" />
       <Image src={SearchIcon} width={37} height={38} alt="search" />
       <div className="flex h-[50px] w-[50px] items-center justify-center">
