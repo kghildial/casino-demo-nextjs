@@ -8,6 +8,7 @@ import Banner4 from '@/assets/images/banners/banner4.png';
 import Banner5 from '@/assets/images/banners/banner5.png';
 
 import HeroGrid from './HeroGrid';
+import Search from './Search';
 
 const Homepage = () => {
   return (
@@ -24,6 +25,8 @@ const Homepage = () => {
       />
 
       <HeroGrid />
+
+      <Search />
     </LayoutWrapper>
   );
 };
