@@ -36,6 +36,8 @@
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
+  --color-tag-background: var(--tag-background);
+  --color-tag-border: var(--tag-border);
 }
 
 :root {
@@ -70,6 +72,8 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+  --tag-background: oklch(0.3169 0.0372 246.13);
+  --tag-border: oklch(0.3326 0.0347 245.72);
 }
 
 .dark {
@@ -104,6 +108,8 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+  --tag-background: oklch(0.3169 0.0372 246.13);
+  --tag-border: oklch(0.3326 0.0347 245.72);
 }
 
 @layer base {

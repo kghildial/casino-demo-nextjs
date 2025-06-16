@@ -6,9 +6,13 @@ import { Input } from '@/components/ui/input';
 
 import SearchIcon from '@/assets/icons/search.svg';
 import Image from 'next/image';
+import Filters from './Filters';
+
+import { tagsList } from './seedData';
 
 const SearchBar = () => {
   const [searhTerm, setSearchTerm] = useState('');
+  const [activeTag, setActiveTag] = useState('');
 
   return (
     <div className="flex flex-col">
@@ -23,6 +27,8 @@ const SearchBar = () => {
           className="border-none"
         />
       </div>
+
+      <Filters tagsList={tagsList} activeTag={activeTag} setActiveTag={setActiveTag} />
     </div>
   );
 };
