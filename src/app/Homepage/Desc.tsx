@@ -1,16 +1,32 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
-import { cn } from '@/lib/utils';
+import { cn, isElementOutOfView } from '@/lib/utils';
 import { useEffect, useState } from 'react';
 
 const Desc = () => {
   const [toggle, setToggle] = useState(false);
 
   useEffect(() => {
+    const elem: HTMLElement | null = document.querySelector('#desc');
+
+    document.addEventListener('scroll', () => {
+      if (elem !== null) {
+        if (isElementOutOfView(elem)) {
+          setToggle(false);
+        }
+      }
+    });
+
+    return () => {
+      document.removeEventListener('scroll', () => {});
+    };
+  }, []);
+
+  useEffect(() => {
     if (toggle) {
       const timeoutID = setTimeout(() => {
-        document.querySelector('#desc')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        document.querySelector('#desc')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }, 300);
 
       return () => {
@@ -83,7 +99,7 @@ const Desc = () => {
       <div
         className={cn(
           'absolute bottom-0 flex h-60 w-full items-end justify-center bg-gradient-to-b from-transparent to-[#1E2A38] transition-all',
-          toggle ? 'fixed right-0 bottom-5 h-20 justify-end bg-transparent' : '',
+          toggle ? 'fixed right-0 bottom-20 h-20 justify-end bg-transparent' : '',
         )}
       >
         <Button
@@ -91,7 +107,17 @@ const Desc = () => {
             'font-poppins mb-10 px-12 py-4 text-sm font-semibold',
             toggle ? 'mb-5' : '',
           )}
-          onClick={() => setToggle(prev => !prev)}
+          onClick={() => {
+            if (toggle) {
+              const timeoutId = setTimeout(() => {
+                document
+                  .querySelector('#desc')
+                  ?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                clearTimeout(timeoutId);
+              }, 300);
+            }
+            setToggle(prev => !prev);
+          }}
         >
           {toggle ? 'READ LESS' : 'READ MORE'}
         </Button>
